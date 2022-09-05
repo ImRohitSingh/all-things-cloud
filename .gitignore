@@ -1,0 +1,7 @@
+# Ignore all
+*
+# Allow directories
+!/**/
+# Allow files with extensions
+!*.*
+*.bak

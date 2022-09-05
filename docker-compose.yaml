@@ -1,0 +1,23 @@
+version: "3"
+services:
+  rabbitmq:
+    image: "rabbitmq:3.8-management-alpine"
+    #3.8.14-management
+    container_name: "rabbitmq-web-test"
+    #environment:
+    #  - RABBITMQ_DEFAULT_USER=rohit
+    #  - RABBITMQ_DEFAULT_PASS=rohit
+    env_file:
+      - ./config/rabbit_creds
+    volumes:
+      - '~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/mnesia/'
+      - '~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq'
+    ports:
+      - 5672:5672
+      - 15672:15672
+    networks:
+      - rabbitmq_net
+
+networks:
+  rabbitmq_net:
+    driver: bridge
