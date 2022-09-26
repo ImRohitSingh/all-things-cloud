@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "building jar..."
+mvn clean install
+echo "building local image..."
+timestamp=$(date +"%m%d%Y%H%M%S")
+docker build -t spring-boot-sample:$timestamp .

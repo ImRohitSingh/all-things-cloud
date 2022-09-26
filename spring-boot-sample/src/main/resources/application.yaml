@@ -1,0 +1,4 @@
+server:
+  port: 5151
+  servlet:
+    context-path: /sample-app/v1
