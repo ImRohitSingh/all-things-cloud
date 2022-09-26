@@ -31,4 +31,8 @@ public class SampleService {
 	public SampleData getById(String id) {
 		return sampleRepository.findById(id);
 	}
+
+	public Boolean deleteById(String id) {
+		return sampleRepository.deleteById(id);
+	}
 }

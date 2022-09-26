@@ -28,4 +28,8 @@ public class SampleRepository {
 		return sampleStorage.stream().filter(r -> id.equals(r.getId())).findAny().orElse(null);
 	}
 
+	public Boolean deleteById(String id) {
+		return sampleStorage.removeIf(data -> id.equals(data.getId()));
+	}
+
 }
