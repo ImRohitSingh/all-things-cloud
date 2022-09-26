@@ -67,4 +67,15 @@ curl --location --request POST 'localhost:5151/sample-app/v1/save' \
 curl --location --request GET 'localhost:5151/sample-app/v1/getAll'
 ```
 
+
+If `curl` is not configured locally, you can run the above commands in the following two ways as well:
+
+1. from inside the container
+```sh
+docker exec -it <container-name> bash
+```
+> From `git bash`, run `winpty docker exec -it <container-name> bash`
+
+2. import the curl command in [Postman](https://www.postman.com/downloads/)
+
 > **Note:** You can also run `./build` from a bash terminal to create image.

@@ -13,19 +13,19 @@ import lombok.extern.slf4j.Slf4j;
 @Component
 public class SampleRepository {
 
-    private List<SampleData> sampleStorage = new LinkedList<>();
+	private List<SampleData> sampleStorage = new LinkedList<>();
 
-    public void save(SampleData sampleData) {
-        sampleStorage.add(sampleData);
-        log.info("{} saved", sampleData);
-    }
+	public void save(SampleData sampleData) {
+		sampleStorage.add(sampleData);
+		log.info("{} saved", sampleData);
+	}
 
-    public List<SampleData> findAll() {
-        return sampleStorage;
-    }
+	public List<SampleData> findAll() {
+		return sampleStorage;
+	}
 
-    public SampleData findById(String id) {
-        return sampleStorage.stream().filter(r -> id.equals(r.getId())).findAny().orElse(null);
-    }
+	public SampleData findById(String id) {
+		return sampleStorage.stream().filter(r -> id.equals(r.getId())).findAny().orElse(null);
+	}
 
 }

@@ -15,32 +15,29 @@ import org.springframework.web.bind.annotation.RestController;
 import com.rohit.springbootsample.models.SampleData;
 import com.rohit.springbootsample.service.SampleService;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 @RestController
 public class SampleDataController {
 
-    private final SampleService sampleService;
+	private final SampleService sampleService;
 
-    @Autowired
-    public SampleDataController(SampleService sampleService) {
-        this.sampleService = sampleService;
-    }
+	@Autowired
+	public SampleDataController(SampleService sampleService) {
+		this.sampleService = sampleService;
+	}
 
-    @PostMapping(path = "/save")
-    @ResponseStatus(code = HttpStatus.CREATED, reason = "sample data saved")
-    public void save(@RequestBody SampleData sampleData) {
-        sampleService.save(sampleData);
-    }
+	@PostMapping(path = "/save")
+	@ResponseStatus(code = HttpStatus.CREATED, reason = "sample data saved")
+	public void save(@RequestBody SampleData sampleData) {
+		sampleService.save(sampleData);
+	}
 
-    @GetMapping(path = "/getAll")
-    public ResponseEntity<List<SampleData>> getAll() {
-        return new ResponseEntity<>(sampleService.getAll(), HttpStatus.OK);
-    }
+	@GetMapping(path = "/getAll")
+	public ResponseEntity<List<SampleData>> getAll() {
+		return new ResponseEntity<>(sampleService.getAll(), HttpStatus.OK);
+	}
 
-    @GetMapping(path = "/getById/{id}")
-    public ResponseEntity<SampleData> getById(@PathVariable(name = "id") String id) {
-        return new ResponseEntity<>(sampleService.getById(id), HttpStatus.OK);
-    }
+	@GetMapping(path = "/getById/{id}")
+	public ResponseEntity<SampleData> getById(@PathVariable(name = "id") String id) {
+		return new ResponseEntity<>(sampleService.getById(id), HttpStatus.OK);
+	}
 }

@@ -13,22 +13,22 @@ import com.rohit.springbootsample.models.SampleData;
 @Service
 public class SampleService {
 
-    private final SampleRepository sampleRepository;
+	private final SampleRepository sampleRepository;
 
-    @Autowired
-    public SampleService(SampleRepository sampleRepository) {
-        this.sampleRepository = sampleRepository;
-    }
+	@Autowired
+	public SampleService(SampleRepository sampleRepository) {
+		this.sampleRepository = sampleRepository;
+	}
 
-    public void save(SampleData sampleData) {
-        sampleRepository.save(new SampleData(UUID.randomUUID().toString(), sampleData.getName(), ZonedDateTime.now()));
-    }
+	public void save(SampleData sampleData) {
+		sampleRepository.save(new SampleData(UUID.randomUUID().toString(), sampleData.getName(), ZonedDateTime.now()));
+	}
 
-    public List<SampleData> getAll() {
-        return sampleRepository.findAll();
-    }
+	public List<SampleData> getAll() {
+		return sampleRepository.findAll();
+	}
 
-    public SampleData getById(String id) {
-        return sampleRepository.findById(id);
-    }
+	public SampleData getById(String id) {
+		return sampleRepository.findById(id);
+	}
 }

@@ -15,9 +15,11 @@ import lombok.NoArgsConstructor;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SampleData implements Serializable {
 
-    private String id;
+	private static final long serialVersionUID = 1L;
 
-    private String name;
+	private String id;
 
-    private ZonedDateTime timestamp;
+	private String name;
+
+	private ZonedDateTime timestamp;
 }
