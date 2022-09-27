@@ -1,12 +1,12 @@
 # Overview
 
-The purpose is to illustrate on how a `docker image` can be built and run, of a basic `Spring Boot application` with simple rest-endpoints.
+The purpose is to illustrate on how a `docker image` can be built and run, of a basic `Spring Boot application` with simple rest-endpoints and <u>no external dependencies</u> (e.g., app / db / message broker etc.)
 
-## Pre-requisites
+## Requirements
 
-- Docker
-- Java 11
-- maven (tested with: `Apache Maven 3.8.6`)
+1. Docker
+1. Java 17
+1. maven (tested with: `Apache Maven 3.8.6`)
 
 ## Build & Run
 
