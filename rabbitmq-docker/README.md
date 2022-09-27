@@ -1,6 +1,6 @@
 # Run rabbitmq as docker container
 
-#### Pre-requisites
+## Pre-requisites
 
 - Docker should be up and running
 - Create a file named `rabbit_creds` and add the following keys with your choice of values:
@@ -9,7 +9,7 @@ RABBITMQ_DEFAULT_USER=
 RABBITMQ_DEFAULT_PASS=
 ```
 
-#### Start
+## Start
 ```sh
 docker-compose up -d
 ```
@@ -18,9 +18,14 @@ You can access the console at [http://localhost:15672](http://localhost:15672/)
 
 > Note: **-d** will start in detached mode
 
-#### Stop
+## Stop
 ```sh
 docker-compose stop
+```
+
+## Remove stopped containers
+```sh
+docker-compose rm
 ```
 
 > Note: Stop existing running instance for RabbitMQ (if any)

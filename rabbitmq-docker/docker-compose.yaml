@@ -3,7 +3,7 @@ services:
   rabbitmq:
     image: "rabbitmq:3.8-management-alpine"
     #3.8.14-management
-    container_name: "rabbitmq-web-container"
+    container_name: "rabbitmq-web-docker-container"
     #environment:
     #  - RABBITMQ_DEFAULT_USER=rohit
     #  - RABBITMQ_DEFAULT_PASS=rohit
