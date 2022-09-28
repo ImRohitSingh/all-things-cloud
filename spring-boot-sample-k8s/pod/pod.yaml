@@ -9,8 +9,8 @@ metadata:
 spec:
   containers:
     - name: spring-boot-sample-k8s-container # container name in which pod will run
-      image: rs9893/spring-boot-sample:latest # image name - to be pulled from Docker Hub
-      imagePullPolicy: Always # when to pull image - if tag for image is "latest", this will by default be "Always"
+      image: rs9893/spring-boot-sample:09282022173059 # image name - to be pulled from Docker Hub
+      imagePullPolicy: IfNotPresent # when to pull image - if tag for image is "latest", this will by default be "Always"
       ports:
         - containerPort: 5151
       livenessProbe: # to periodically check pod status by doing something (e.g., call one endpoint) and restart the container, on failure
