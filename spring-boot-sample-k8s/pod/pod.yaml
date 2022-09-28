@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod # K8s resource kind
+metadata:
+  name: spring-boot-sample-pod # pod will be created with this name
+  labels: # custom labels to identify the object (or pod)
+    app: spring-boot-sample
+    type: backend-test
+    app.kubernetes.io/name: spring-boot-sample-app # to be used as selector by the service
+spec:
+  containers:
+    - name: spring-boot-sample-k8s-container # container name in which pod will run
+      image: rs9893/spring-boot-sample:latest # image name - to be pulled from Docker Hub
+      imagePullPolicy: Always # when to pull image - if tag for image is "latest", this will by default be "Always"
+      ports:
+        - containerPort: 5151
+      livenessProbe: # to periodically check pod status by doing something (e.g., call one endpoint) and restart the container, on failure
+        exec:
+          command:
+            - '/bin/bash'
+            - '-c'
+            - >
+              curl --location --request GET 'localhost:5151/sample-app/v1/getAll'
+        initialDelaySeconds: 60
+        periodSeconds: 60
+        terminationGracePeriodSeconds: 5
+      readinessProbe: # to periodically pod status by doing something (e.g., call one endpoint) and remove the container, on failure
+        httpGet:
+          path: /sample-app/v1/getAll
+          port: 5151
+        initialDelaySeconds: 10
+        periodSeconds: 10
+          
