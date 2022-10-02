@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service # K8s resource kind
+metadata:
+  name: spring-boot-sample-service # service will be created with this name
+  labels:
+    service: spring-boot-sample-service
+spec:
+  selector:
+    app.kubernetes.io/name: spring-boot-sample-app # to be used as selector for the pod
+  ports:
+    - port: 5151 # the port in which the service is running on in the cluster
+      protocol: "TCP"
+      targetPort: 5151 # the port to be exposed by the service
+      name: http
+  type: LoadBalancer # type LoadBalancer indicates that our service will be external

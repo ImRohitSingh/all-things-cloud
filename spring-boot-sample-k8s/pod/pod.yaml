@@ -3,7 +3,7 @@ kind: Pod # K8s resource kind
 metadata:
   name: spring-boot-sample-pod # pod will be created with this name
   labels: # custom labels to identify the object (or pod)
-    app: spring-boot-sample
+    pod: spring-boot-sample-pod
     type: backend-test
     app.kubernetes.io/name: spring-boot-sample-app # to be used as selector by the service
 spec:

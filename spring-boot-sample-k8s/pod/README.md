@@ -84,3 +84,5 @@ kubectl delete pod spring-boot-sample-pod
 [Expected output: pod "spring-boot-sample-pod" deleted]
 ```
 
+> **Next**: [../replicaset](https://github.com/ImRohitSingh/all-things-cloud/tree/master/spring-boot-sample-k8s/replicaset)
+

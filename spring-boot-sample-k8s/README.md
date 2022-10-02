@@ -37,4 +37,6 @@ kubectl get nodes
 kubectl config current-context
 ```
 
-Go to the respective directories to deploy different K8s objects based on the same Docker image.
+Go to the respective directories (in order: `pod`, `replicaset`, `deployment` and `statefulset`) to deploy different K8s objects based on the same Docker image.
+
+> **Note**: Delete (refer to respective READMEs) each deployment before creating different objects.
